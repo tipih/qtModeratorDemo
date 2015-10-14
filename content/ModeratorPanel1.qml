@@ -374,7 +374,7 @@ Item {
 
     Component.onCompleted: {
         //Init state, this will not work, as we do not have a connection up running yet :(
-        stackView.sendMessage("mqttdemo/panel2left/radiobutton1",radiobutton1.checked.toString())
+        //stackView.sendMessage("mqttdemo/panel2left/radiobutton1",radiobutton1.checked.toString())
         //Connect a signal from stackview to a function in this view
         //   stackView.changeView.connect(root.changeView)
     }

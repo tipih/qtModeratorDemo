@@ -12,37 +12,39 @@ ApplicationWindow {
     height: 900
 
 
-    function test(topic, message){
-        console.log(topic+" "+message)
-    }
-    function setText(text){
-        topText.text=text
-    }
 
+
+    Component.onCompleted: {
+        console.log("are we connected "+_MQTT.connectedtohost)
+        if (_MQTT.connectedtohost===false) {
+
+            trytoconnect.running= true
+            stackView.changeView(2)
+        }
+    }
 
     MQTT {
-            id: _MQTT
-            host: "localhost"
-            port: 1883
-            topic: "speed"
-            onDisconnected: {
+        id: _MQTT
+        host: "localhost"
+        port: 1883
+        topic: "speed"
+        onDisconnected: {
 
-                console.log("Lost connection")
-                stackView.changeView(2)
-                trytoconnect.running= true
-            }
-            onConnected: {
-                trytoconnect.running = false
-                //textinfostring.text ="Connected to broker"
-                stackView.changeView(0)
+            console.log("Lost connection")
+            stackView.changeView(2)
+            trytoconnect.running= true
+        }
+        onConnected: {
+            trytoconnect.running = false
+            stackView.changeView(0)
 
-            }
+        }
     }
     Timer {
-            id: trytoconnect
-            interval: 1000; running: false; repeat: true
-             onTriggered: _MQTT.connect()
-         }
+        id: trytoconnect
+        interval: 1000; running: false; repeat: true
+        onTriggered: _MQTT.connect()
+    }
 
     Rectangle {
         color: "#212126"
