@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>content/TabBarPage.qml</file>
+        <file>content/ModeratorPanel1.qml</file>
+        <file>content/ModeratorPanel2.qml</file>
+        <file>content/SettingsPanel.qml</file>
+        <file>content/Button1.qml</file>
+        <file>images/button_default.png</file>
+        <file>images/button_pressed.png</file>
+        <file>images/navigation_next_item.png</file>
+        <file>images/navigation_previous_item.png</file>
+        <file>images/tab_selected.png</file>
+        <file>images/tabs_standard.png</file>
+        <file>images/textinput.png</file>
+        <file>images/toolbar.png</file>
+        <file>content/AndroidDelegate.qml</file>
+        <file>content/PushButtonStyles.qml</file>
+        <file>content/SwitchButtonStyle.qml</file>
+        <file>content/TextStyle.qml</file>
+        <file>content/RadioButtonStyles.qml</file>
+        <file>content/CheckBoxStyles.qml</file>
+    </qresource>
+</RCC>
