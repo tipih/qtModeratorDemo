@@ -56,8 +56,7 @@ Item {
                 anchors.centerIn: parent
 
                 Switch {
-                    anchors.top: text1.bottom
-                    anchors.topMargin: 30
+
                     anchors.horizontalCenter: parent.horizontalCenter
                     id:switch1
                     style: SwitchButtonStyle {}
@@ -67,8 +66,7 @@ Item {
                     }
                 }
                 Switch {
-                    anchors.top: text1.bottom
-                    anchors.topMargin: 30
+
                     anchors.horizontalCenter: parent.horizontalCenter
                     id:switch2
                     style: SwitchButtonStyle {}
@@ -78,8 +76,7 @@ Item {
                     }
                 }
                 Switch {
-                    anchors.top: text1.bottom
-                    anchors.topMargin: 30
+
                     anchors.horizontalCenter: parent.horizontalCenter
                     id:switch3
                     style: SwitchButtonStyle {}
@@ -131,9 +128,7 @@ Item {
                 Button {
                     id:button1
                     anchors.horizontalCenter: parent.horizontalCenter
-                    anchors.top: row1.bottom
-                    anchors.topMargin: 10
-                    width: row1.width
+
 
                     text: "Button 1"
                     style: PushButtonStyles{}
@@ -144,9 +139,8 @@ Item {
                 Button {
                     id:button2
                     anchors.horizontalCenter: parent.horizontalCenter
-                    anchors.top: row1.bottom
-                    anchors.topMargin: 10
-                    width: row1.width
+
+
 
                     text: "Button 2"
                     style: PushButtonStyles{}
@@ -157,9 +151,7 @@ Item {
                 Button {
                     id:button3
                     anchors.horizontalCenter: parent.horizontalCenter
-                    anchors.top: row1.bottom
-                    anchors.topMargin: 10
-                    width: row1.width
+
 
                     text: "Button 3"
                     style: PushButtonStyles{}

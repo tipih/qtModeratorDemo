@@ -5,57 +5,13 @@ import mqtt 1.0
 import "content"
 
 
-ApplicationWindow {
-    id:rootItem
-    visible: true
-    width: 800
-    height: 900
 
 
-
-    Component.onCompleted: {
-        console.log("are we connected "+_MQTT.connectedtohost)
-        if (_MQTT.connectedtohost===false) {
-
-            trytoconnect.running= true
-            stackView.changeView(2)
-        }
-        console.log("Screen orintation "+rootItem.orin)
-
-
-    }
-
-    MQTT {
-        id: _MQTT
-        host: "127.0.0.1"
-        port: 1883
-        topic: "speed"
-        onDisconnected: {
-
-            console.log("Lost connection")
-            stackView.changeView(2)
-            trytoconnect.running= true
-        }
-        onConnected: {
-            trytoconnect.running = false
-            stackView.changeView(0)
-
-        }
-    }
-    Timer {
-        id: trytoconnect
-        interval: 1000; running: false; repeat: true
-        onTriggered: _MQTT.connect()
-    }
-
-
-        Rectangle {
-            color: "#212126"
-            anchors.fill: parent
-        }
-
-
-
+    ApplicationWindow {
+        id:rootItem
+        visible: true
+        width: 800
+        height: 900
         toolBar: BorderImage {
             border.bottom: 8
             source: "images/toolbar.png"
@@ -80,6 +36,51 @@ ApplicationWindow {
                 text: "Modarator Panel Demo"
             }
         }
+
+        Component.onCompleted: {
+            console.log("are we connected "+_MQTT.connectedtohost)
+            if (_MQTT.connectedtohost===false) {
+
+                trytoconnect.running= true
+                stackView.changeView(2)
+            }
+            console.log("Screen orintation "+rootItem.orin)
+
+
+        }
+
+        MQTT {
+            id: _MQTT
+            host: "127.0.0.1"
+            port: 1883
+            topic: "speed"
+            onDisconnected: {
+
+                console.log("Lost connection")
+                stackView.changeView(2)
+                trytoconnect.running= true
+            }
+            onConnected: {
+                trytoconnect.running = false
+                stackView.changeView(0)
+
+            }
+        }
+        Timer {
+            id: trytoconnect
+            interval: 1000; running: false; repeat: true
+            onTriggered: _MQTT.connect()
+        }
+
+
+        Rectangle {
+            color: "#212126"
+            anchors.fill: parent
+        }
+
+
+
+
 
         ListModel {
             id: pageModel
@@ -149,6 +150,7 @@ ApplicationWindow {
 
 
     }
+
 
 
 
