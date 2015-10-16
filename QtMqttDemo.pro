@@ -28,7 +28,8 @@ OTHER_FILES += \
     content/TabBarPage.qml
 
 DISTFILES += \
-    content/AndroidDelegate.qml
+    content/AndroidDelegate.qml \
+    content/Sliderstyles.qml
 
 HEADERS += \
     mqtt/mqtt.h \
