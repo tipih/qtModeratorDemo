@@ -20,5 +20,6 @@
         <file>content/TextStyle.qml</file>
         <file>content/RadioButtonStyles.qml</file>
         <file>content/CheckBoxStyles.qml</file>
+        <file>content/TextFieldStyles.qml</file>
     </qresource>
 </RCC>
