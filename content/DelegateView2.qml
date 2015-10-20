@@ -23,9 +23,35 @@ Item {
         GroupBox {
             id: groupBox1
             anchors.verticalCenter: parent.verticalCenter
-            width: container.width/2
-            height: container.height-10
+            anchors.leftMargin: 10
+            anchors.left: parent.left
+            width: container.width/2-10
+            height: container.height-45
             title: qsTr("Box")
+            style: Style {
+                property Component panel: Item {
+
+                    Text {
+                        anchors.left: parent.left
+                        anchors.leftMargin: 10
+                        anchors.bottom: parent.top
+                        text: control.title
+                        color: control.enabled ? "white" : "gray"
+                        renderType: Text.NativeRendering
+                        font.italic: !control.enabled
+                        font.weight: Font.Bold
+                        font.pointSize: 14
+                    }
+                    Rectangle{
+                        anchors.fill: parent
+                        color: "transparent"
+                        border.color: "steelblue"
+                        border.width: 2
+                        radius: 5
+
+                    }
+                }
+            }
 
             Column {
                 id: column1
@@ -52,9 +78,42 @@ Item {
                 }
             }
         }
+        GroupBox {
+            id: groupBox1right
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.rightMargin: 10
+            anchors.right: parent.right
+            width: container.width/2-10
+            height: container.height-45
+            title: qsTr("Box1")
+            style: Style {
+                property Component panel: Item {
+
+                    Text {
+                        anchors.left: parent.left
+                        anchors.leftMargin: 10
+                        anchors.bottom: parent.top
+                        text: control.title
+                        color: control.enabled ? "white" : "gray"
+                        renderType: Text.NativeRendering
+                        font.italic: !control.enabled
+                        font.weight: Font.Bold
+                        font.pointSize: 14
+                    }
+                    Rectangle{
+                        anchors.fill: parent
+                        color: "transparent"
+                        border.color: "steelblue"
+                        border.width: 2
+                        radius: 5
+
+                    }
+                }
+            }
+        }
     }
 
-    Text {text:parent.width}
+
 }
 
 
