@@ -74,6 +74,10 @@ Item {
             ModeratorPanel2{ visible: true }
         }
         Tab {
+            title: "Moderator 3"
+            ModeratorPanel3{ visible: true }
+        }
+        Tab{
             title: "Settings"
             SettingsPanel{ visible: true }
         }

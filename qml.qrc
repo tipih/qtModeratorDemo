@@ -22,5 +22,11 @@
         <file>content/CheckBoxStyles.qml</file>
         <file>content/TextFieldStyles.qml</file>
         <file>content/Sliderstyles.qml</file>
+        <file>content/testModel.qml</file>
+        <file>content/ModeratorPanel3.qml</file>
+        <file>content/DelegateView1.qml</file>
+        <file>content/DelegateView2.qml</file>
+        <file>content/DelegateView3.qml</file>
+        <file>content/DelegateView4.qml</file>
     </qresource>
 </RCC>
