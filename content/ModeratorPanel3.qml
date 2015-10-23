@@ -11,23 +11,28 @@ Item {
     height: parent.height
 
 
+
     ListModel {
         id:delegatemodel
         ListElement {
             title: "View 1"
             sourcedelegate: "DelegateView1.qml"
+            sourcemodel: ""
         }
         ListElement {
             title: "View 2"
             sourcedelegate: "DelegateView2.qml"
+            sourcemodel: ""
         }
         ListElement {
             title: "View 3"
             sourcedelegate: "DelegateView3.qml"
+            sourcemodel: "DynamicSliderModel.qml"
         }
         ListElement {
             title: "View 4"
             sourcedelegate: "DelegateView4.qml"
+            sourcemodel:""
         }
     }
 
@@ -64,20 +69,49 @@ Item {
             spacing: 5
 
             clip: true
+            highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
+            focus: true
 
             model: delegatemodel
             delegate: Component {
+
                 Loader {
+                    id:mydelegate
                     width: textlist.width
                     source: sourcedelegate
-                    onLoaded: { item.width= width }
+                    onLoaded: {
+                        item.width= width
+                        //item.boxtext= "Hejsa"
+                        binder.target = mydelegate.item
+
+                    }
+
+                    Connections {
+                        target: mydelegate.item
+                        onSendUpdate: {
+                            textTest.text=id+" "+data
+                            console.log(id)
+                        }
+                    }
                 }
             }
 
-            highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
-            focus: true
+
         }
 
+
+    }
+
+
+
+    function foo(id,value){
+        console.log("Data from dynamic UI id="+id+" Value="+value)
+    }
+
+    Binding{
+        id: binder
+        property: "boxtext"
+        value: textlist.currentIndex
 
     }
 

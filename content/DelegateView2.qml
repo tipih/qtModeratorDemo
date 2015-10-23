@@ -8,6 +8,7 @@ Item {
     implicitHeight : 200
     implicitWidth:  500
     property int btnOffset : 10
+    property alias boxtext: groupBox1.title
 
 
     Rectangle {
@@ -27,7 +28,7 @@ Item {
             anchors.left: parent.left
             width: container.width/2-10
             height: container.height-45
-            title: qsTr("Box")
+            title:  qsTr("Box")
             style: Style {
                 property Component panel: Item {
 

@@ -28,5 +28,7 @@
         <file>content/DelegateView2.qml</file>
         <file>content/DelegateView3.qml</file>
         <file>content/DelegateView4.qml</file>
+        <file>content/DynamicSliderModel.qml</file>
+        <file>content/TopModel.qml</file>
     </qresource>
 </RCC>
