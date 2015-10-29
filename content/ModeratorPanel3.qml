@@ -91,6 +91,7 @@ Item {
                         onSendUpdate: {
                             textTest.text=id+" "+data
                             console.log(id)
+                            stackView.sendMessage("mqttdemo/ModeratorPanel3/"+id,data)
                         }
                     }
                 }
